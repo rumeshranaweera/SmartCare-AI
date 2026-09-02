@@ -185,24 +185,22 @@ with st.sidebar:
 
     page = st.radio(
         "Navigation",
-        ["Predict", "Model Insights", "About"],
+        ["Predict"],
         label_visibility="collapsed",
     )
 
     st.markdown("---")
-    st.markdown("**Model**")
-    st.write(metadata.get("model_name", "Random Forest"))
-    st.caption("Option A • Binary Classification")
-    st.caption("Target: no_show")
+    # st.markdown("**Model**")
+    # st.write(metadata.get("model_name", "Random Forest"))
+    # st.caption("Option A • Binary Classification")
 
     st.markdown("---")
-    st.caption("Academic prototype — not a clinical decision system.")
+    # st.caption("Academic prototype — not a clinical decision system.")
 
 
 # ---------------- Header ----------------
 st.markdown("""
 <div class="hero">
-    <div class="eyebrow">CCS3440 • Artificial Intelligence</div>
     <h1>Appointment No-show Predictor</h1>
 </div>
 """, unsafe_allow_html=True)
@@ -374,7 +372,7 @@ if page == "Predict":
 
     else:
         st.markdown("""
-        <div class="soft-card">
+        <div class="soft-card" style="display:none">
             <b>How to use:</b> Enter the patient and appointment information above, then select
             <b>Predict no-show risk</b>. The application applies the same preprocessing and feature
             engineering pipeline used when the model was trained.
@@ -478,7 +476,7 @@ else:
         "A no-show prediction must not be treated as a clinical judgment or used to refuse care."
     )
 
-st.markdown(
-    '<div class="footer-note">SmartCare AI • CCS3440 Artificial Intelligence Coursework • Streamlit Prototype</div>',
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     '<div class="footer-note">SmartCare AI • CCS3440 Artificial Intelligence Coursework • Streamlit Prototype</div>',
+#     unsafe_allow_html=True
+# )
